@@ -21,7 +21,10 @@ window.onload = function() {
           ++siteTypeIndex
         ) {
           console.log(
-            `${pronoun[pronounIndex]}${adjective[adjIndex]}${noun[nounIndex]}${siteType[siteTypeIndex]}`
+            pronoun[pronounIndex] +
+              adjective[adjIndex] +
+              noun[nounIndex] +
+              siteType[siteTypeIndex]
           );
         }
       }
@@ -37,7 +40,11 @@ window.onload = function() {
           ++siteTypeIndex
         ) {
           let para = document.createElement("p");
-          para.innerHTML = `${pronoun[pronounIndex]}${adjective[adjIndex]}${noun[nounIndex]}${siteType[siteTypeIndex]}`;
+          para.innerHTML =
+            pronoun[pronounIndex] +
+            adjective[adjIndex] +
+            noun[nounIndex] +
+            siteType[siteTypeIndex];
           document.getElementById("generator").appendChild(para);
         }
       }
