@@ -6,19 +6,41 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 window.onload = function() {
-  //write your code here
-  document.querySelector("#bookRow").innerHTML = generateBooks();
-  document.querySelector("#btn").addEventListener("click");
-};
+  let pronoun = ["the", "their", "my", "your"];
+  let adjective = ["masive", "regular", "fantastic", "large"];
+  let noun = ["eagle", "tower", "desk", "telephone"];
+  let siteType = [".com", ".net", ".org", ".edu"];
 
-const generateBooks = () => {
-  let books = ["A1", "B2", "C3", "D4", "E5"];
+  console.log("Regular for loop:");
+  for (let pronounIndex = 0; pronounIndex < pronoun.length; ++pronounIndex) {
+    for (let adjIndex = 0; adjIndex < adjective.length; ++adjIndex) {
+      for (let nounIndex = 0; nounIndex < noun.length; ++nounIndex) {
+        for (
+          let siteTypeIndex = 0;
+          siteTypeIndex < siteType.length;
+          ++siteTypeIndex
+        ) {
+          console.log(
+            `${pronoun[pronounIndex]}${adjective[adjIndex]}${noun[nounIndex]}${siteType[siteTypeIndex]}`
+          );
+        }
+      }
+    }
+  }
 
-  let bookCards = "";
-
-  books.map((book, index) => {
-    bookCards += "<div><h6>" + book + "</h6><button id='btn'>❤️</div>";
-  });
-
-  return bookCards;
+  for (let pronounIndex = 0; pronounIndex < pronoun.length; ++pronounIndex) {
+    for (let adjIndex = 0; adjIndex < adjective.length; ++adjIndex) {
+      for (let nounIndex = 0; nounIndex < noun.length; ++nounIndex) {
+        for (
+          let siteTypeIndex = 0;
+          siteTypeIndex < siteType.length;
+          ++siteTypeIndex
+        ) {
+          let para = document.createElement("p");
+          para.innerHTML = `${pronoun[pronounIndex]}${adjective[adjIndex]}${noun[nounIndex]}${siteType[siteTypeIndex]}`;
+          document.getElementById("generator").appendChild(para);
+        }
+      }
+    }
+  }
 };
